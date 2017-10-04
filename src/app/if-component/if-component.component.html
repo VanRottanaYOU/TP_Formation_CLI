@@ -1,0 +1,9 @@
+<div *ngIf="isDisplay">
+  <p>Formation Angular</p>
+</div>
+
+<button (click)="onClick()">if</button>
+
+<ng-template [ngIf]="isDisplay">
+  <p>Formation Angular</p>
+</ng-template>

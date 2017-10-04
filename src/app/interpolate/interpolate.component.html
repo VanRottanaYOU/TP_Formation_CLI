@@ -1,0 +1,24 @@
+<div>
+    <p>
+        {{nom}}
+    </p>
+    <p>
+        {{prenom}} A
+    </p>
+    <p>
+        {{getFullname()}}
+    </p>
+    <p>
+        {{maformation.nom}} {{maformation.description}}
+    </p>
+    <p>
+        {{getFormation()}} {{prix | currency:'EUR'}} {{dateDebut | date:'dd/MM/yyyy'}} {{datefin | date:'dd/MM/yyyy'}}
+    </p>
+    <p>
+        Optional: {{formationJS?.nom}}
+    </p>
+
+    <p [hidden]="isHidden">gyiutfukyglhhlgh</p>
+
+    <button (click)="onClick($event)">Click me interpolate!</button>
+</div>

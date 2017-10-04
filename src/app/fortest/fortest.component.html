@@ -1,0 +1,29 @@
+<div [ngSwitch]="formations.length">
+  <p *ngSwitchCase="0">Aucune formation disponibles</p>
+  <p *ngSwitchCase="1">Une formation disponible : </p>
+  <p *ngSwitchDefault>Formations disponibles :</p>
+</div>
+<!-- 
+<ul> -->
+<!-- <li *ngFor="let formation of formations; index as i; first as f, last as l, even as e"> -->
+<!-- <p [style.color]="getColorByElement(i)" [style.backgroundColor]="getColorBackGround(i)"> -->
+<!-- <p [ngStyle]="{color: color, background: background}"> -->
+<!-- <p [class.sapinRed]="getIndex1(i)" [class.sapinGreen]="getIndex2(i)" [class.sapinGrey]="getIndex3(i)"> -->
+<!-- <p [class.sapinRed]=f [class.sapinGreen]=l [class.sapinGrey]=e > -->
+<!-- <p [ngClass]="{'class.sapinRed': "getIndex(i)", 'class.sapinGreen': "getIndex(i)", 'class.sapinGrey':"getIndex(i)"}">  -->
+<!-- {{i}} - {{ formation.nom | titlecase}} {{ formation.description }} -->
+<!-- </p> -->
+<!-- </li> -->
+<!-- </ul> -->
+<ul>
+  <li *ngFor="let formation of formations">
+    <app-formation-item [formation]="formation"></app-formation-item>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let formation of formations">
+    <app-formation-item-output [formation]="formation" (formationSelected)="handleFormationSelected($event)">
+    </app-formation-item-output>
+  </li>
+</ul>
